@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Crocs Shoes Store</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <script src="script.js" defer></script> <!-- Link to your JavaScript file -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Shop - Crocs Shoes Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="signup.html" class="signup-btn">Sign Up/Sign In</a>
+        </nav>
+    </header>
+
+    <img src="payment.jpg" alt="Payment Portal">
+
+    <!-- Payment Form Section -->
+    <div class="container">
+        <section class="payment-form">
+            <h2>Payment Details</h2>
+            <form id="paymentForm">
+                <label for="name">Name on Card:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+                
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+                
+                <button type="submit">Submit Payment</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Crocs Shoes Store. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
