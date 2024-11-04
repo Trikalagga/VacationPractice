@@ -59,4 +59,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update cart count on page load
     updateCartCount();
+
+    // Add event listener for the search bar
+    const searchBar = document.getElementById('searchBar');
+    if (searchBar) {
+        searchBar.addEventListener('input', function () {
+            const searchTerm = searchBar.value.toLowerCase();
+            const productList = document.querySelectorAll('.product-item');
+
+            productList.forEach(product => {
+                const productName = product.querySelector('.product-name').textContent.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    }
 });
