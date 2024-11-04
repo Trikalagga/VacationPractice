@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart - Crocs Shoes Store</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Your Cart</h1>
+    </header>
+
+    <div id="cart-items"></div>
+    <button onclick="clearCart()">Clear Cart</button>
+
+    <script>
+        // Display items in the cart
+        function displayCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartDiv = document.getElementById('cart-items');
+
+            cartDiv.innerHTML = cartItems.length === 0 
+                ? '<p>Your cart is empty.</p>' 
+                : cartItems.map(item => `
+                    <div class="cart-item">
+                        <h2>${item.name}</h2>
+                        <p>Price: $${item.price}</p>
+                        <button onclick="removeFromCart(${item.id})">Remove</button>
+                    </div>
+                `).join('');
+        }
+
+        // Clear the cart
+        function clearCart() {
+            localStorage.removeItem('cart');
+            updateCartCount();
+            displayCartItems();
+        }
+
+        // Load cart items on page load
+        document.addEventListener('DOMContentLoaded', displayCartItems);
+    </script>
+</body>
+</html>
